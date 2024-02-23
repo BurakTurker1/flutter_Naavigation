@@ -119,6 +119,13 @@ class AnaSayfa extends StatelessWidget {
               child: Text('onUnknownRoute'),
               style: ElevatedButton.styleFrom(backgroundColor: Colors.orange),
             ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).pushNamed('/OgrenciListesi',arguments: 60);
+              },
+              child: Text('Liste Oluştur',style: TextStyle(color: Colors.white),),
+              style: ElevatedButton.styleFrom(backgroundColor: Colors.deepPurple),
+            ),
           ],
         ),
       ),
