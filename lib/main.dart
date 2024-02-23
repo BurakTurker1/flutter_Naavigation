@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_navigation/green_page.dart';
 import 'package:flutter_navigation/red_page.dart';
+import 'package:flutter_navigation/route_generate.dart';
 import 'package:flutter_navigation/yellow_page.dart';
 
 void main() => runApp(const MyApp());
@@ -13,6 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       //home: AnaSayfa(),
+      /*
       routes: {
         //eger kök dizinli rota belirlenirse home yerine geçer ve ikisi aynı anda kullanılamaz
         '/': (context) => AnaSayfa(),
@@ -21,17 +23,26 @@ class MyApp extends StatelessWidget {
         '/YellowPage': (context) => yellowPage(),
       },
       onUnknownRoute: ((Settings) => NotFound404()) ,
+      */
+      onGenerateRoute: RouteGenerate.routeGenerate,
     );
   }
 
   MaterialPageRoute<dynamic> NotFound404() {
-    return MaterialPageRoute(builder: (context)=>Scaffold(
-      appBar: AppBar(title: Text('404 Not Found'),backgroundColor: Colors.amber,),
-      backgroundColor: Colors.amber.shade800,
-      body: Center(
-        child: Text('404 Not Found',style: TextStyle(fontSize: 45),),
-      ),
-    ) );
+    return MaterialPageRoute(
+        builder: (context) => Scaffold(
+              appBar: AppBar(
+                title: Text('404 Not Found'),
+                backgroundColor: Colors.amber,
+              ),
+              backgroundColor: Colors.amber.shade800,
+              body: Center(
+                child: Text(
+                  '404 Not Found',
+                  style: TextStyle(fontSize: 45),
+                ),
+              ),
+            ));
   }
 }
 
