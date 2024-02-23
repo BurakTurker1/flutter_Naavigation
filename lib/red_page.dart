@@ -19,8 +19,7 @@ class RedPage extends StatelessWidget {
       },
       */
 
-
-      //!!!! WillPopScope artık kullanılmıyo onun yerine "PopScope" Kullanılıyo 
+    //!!!! WillPopScope artık kullanılmıyo onun yerine "PopScope" Kullanılıyo
     return WillPopScope(
       onWillPop: () {
         debugPrint('willPopScope çalisti');
@@ -49,17 +48,17 @@ class RedPage extends StatelessWidget {
                     Navigator.of(context).pop(_rasgeleSayi);
                   },
                   child: Text(' Geri dön')),
-
-                              ElevatedButton(
-                onPressed: () async {
-                  if(Navigator.canPop(context)){
-                    debugPrint('evet pop olabilir');
-                  }else{
-                    debugPrint('Hayir pop olamaz');
-                  }
-                },
-                child: Text('Maybe Pop Kullanimi'),
-                style: ElevatedButton.styleFrom(primary: Colors.red.shade300)),
+              ElevatedButton(
+                  onPressed: () async {
+                    if (Navigator.canPop(context)) {
+                      debugPrint('evet pop olabilir');
+                    } else {
+                      debugPrint('Hayir pop olamaz');
+                    }
+                  },
+                  child: Text('Maybe Pop Kullanimi'),
+                  style:
+                      ElevatedButton.styleFrom(primary: Colors.red.shade300)),
             ],
           ),
         ),
